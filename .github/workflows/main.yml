@@ -1,0 +1,30 @@
+name: Daily Update
+
+on:
+  schedule:
+    - cron: '30 15 * * 1-5'   # 北京23:30
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: pip install tushare pandas numpy
+      - name: Run
+        env:
+          TUSHARE_TOKEN: ${{ secrets.TUSHARE_TOKEN }}
+        run: python main.py
+      - name: Deploy
+        run: |
+          git config user.name "bot"
+          git config user.email "bot@github.com"
+          git add docs/ data/ -f
+          git add data/last_run_date.txt 2>/dev/null || true
+          git commit -m "Auto update" || echo "No changes"
+          git push
