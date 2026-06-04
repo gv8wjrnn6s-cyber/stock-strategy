@@ -1,0 +1,5 @@
+body{font-family:Arial,sans-serif;background:#f4f6f9;margin:0;padding:0}
+header{background:#1e3a8a;color:#fff;padding:20px;text-align:center}
+main{max-width:900px;margin:20px auto;padding:20px;background:#fff;border-radius:8px}
+table{width:100%;border-collapse:collapse;margin:10px 0}th,td{padding:8px;border-bottom:1px solid #eee;text-align:left}th{background:#f0f4ff}
+footer{text-align:center;padding:20px;color:#666;font-size:0.9em}
