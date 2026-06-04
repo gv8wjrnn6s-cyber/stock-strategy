@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>短线策略</title><link rel="stylesheet" href="style.css"><script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script></head>
+<body>
+<header><h1>📈 涨停板次日溢价预测</h1><p>日期：{{DATE}} | 市场：{{STATUS}}</p></header>
+<main>
+<section><h2>今日推荐</h2><table><tr><th>代码</th><th>名称</th><th>评分</th><th>介入条件</th><th>止损</th><th>风险</th></tr>{{ROWS}}</table><p>⚠️ 次日开盘结合竞价量比决定，严格止损。</p></section>
+<section><h2>净值曲线</h2><canvas id="chart" height="200"></canvas></section>
+</main>
+<footer>风险提示：本工具仅为个人学习，不构成投资建议，操作风险自负。</footer>
+<script src="script.js"></script>
+</body>
+</html>
